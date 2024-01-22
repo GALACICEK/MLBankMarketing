@@ -1,3 +1,5 @@
 .vs
 .env
 .conda
+
+__pycache__
