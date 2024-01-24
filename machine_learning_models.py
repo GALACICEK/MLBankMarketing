@@ -29,8 +29,6 @@ class MLModels:
 
         cm = confusion_matrix(y_test,y_pred)
 
-        cm_percentage = (cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]) * 100
-
 
         fpr, tpr, thresholds = roc_curve(y_test, y_pred_score)
         roc_auc = auc(fpr, tpr)
@@ -40,7 +38,7 @@ class MLModels:
                 'precision': [precision],
                 'recall': [recall],
                 'f1': [f1],
-                'cm': [cm_percentage],
+                'cm': [cm],
                 'roc_auc': [roc_auc],
                 'fpr': [fpr],
                 'tpr': [tpr]}
